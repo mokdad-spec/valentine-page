@@ -43,7 +43,7 @@ h1 {
 /* Style des boutons */
 .buttons {
     position: absolute;
-    bottom: 60px; /* Décalé de 60px, équivalent à environ 2 cm */
+    bottom: 100px; /* Augmenté de 40px (maintenant environ 4 cm sous le texte) */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -89,4 +89,27 @@ button:active {
 #fireworks {
     position: absolute;
     top: 50%;
-    lef
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.firework {
+    position: absolute;
+    background-color: yellow;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
