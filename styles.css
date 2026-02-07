@@ -1,27 +1,129 @@
 /* Style global */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5a9c0; /* Rose pastel */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    color: white;
     text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    padding: 30px 50px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-    font-size: 3em;
-    color: #ff4081;
-    margin-bottom: 30px;
+    font-size: 2.5em;
+    margin-top: 80px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Style des boutons */
 .buttons {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: center;
     gap: 20px;
 }
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#yes-btn {
+    background-color: #ff66b2; /* Rose vif */
+    color: white;
+}
+
+#no-btn {
+    background-color: #e53935; /* Rouge */
+    color: white;
+}
+
+/* Changer la couleur et l'animation au survol */
+button:hover {
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Animations des coeurs */
+#hearts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 2em;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-50px) scale(1.2);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animations des feux d'artifice */
+#fireworks {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.firework {
+    position: absolute;
+    background-color: yellow;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
 
 button {
     padding: 15px 30px;
@@ -128,4 +230,5 @@ button:hover {
         left: 20%;
     }
 }
+
 
