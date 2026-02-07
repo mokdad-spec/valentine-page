@@ -21,6 +21,7 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     width: 90%;
     max-width: 500px;
+    z-index: 10; /* Assurer que le contenu (texte, boutons) est au-dessus des coeurs */
 }
 
 h1 {
@@ -36,16 +37,18 @@ h1 {
     font-weight: bold;
     color: #ff66b2;
     display: none; /* Caché par défaut */
+    z-index: 20;
 }
 
 /* Style des boutons */
 .buttons {
     position: absolute;
-    bottom: 60px; /* Décalé de 3 cm (environ 30px) par rapport au bas */
+    bottom: 40px; /* Décalé un peu plus bas pour éviter de recouvrir l'écriture */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 20px;
+    z-index: 30; /* Les boutons au-dessus des cœurs */
 }
 
 button {
@@ -85,7 +88,7 @@ button:active {
     pointer-events: none;
     width: 100%;
     height: 100%;
-    z-index: 1000; /* S'assurer que les cœurs apparaissent au-dessus de tout le reste */
+    z-index: 5; /* Assurer que les cœurs sont derrière le texte et les boutons */
 }
 
 .heart {
