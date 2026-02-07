@@ -1,25 +1,52 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Style global */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(45deg, #ff8fa3, #ffb0c7);
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
     text-align: center;
-    overflow: hidden;
-    position: relative;
 }
 
-.container {
-    position: relative;
-    z-index: 1;
+h1 {
+    font-size: 3em;
+    color: #ff4081;
+    margin-bottom: 30px;
 }
+
+/* Style des boutons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#yes-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#no-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Animation de déplacement du bouton "No" */
+button:active {
+    transform: scale(0.95);
+}
+
 
 h1 {
     color: #fff;
@@ -101,3 +128,4 @@ button:hover {
         left: 20%;
     }
 }
+
