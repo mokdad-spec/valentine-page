@@ -49,7 +49,7 @@ yesButton.addEventListener("click", function(event) {
     showMessage(); // Afficher le message
 });
 
-// Déplacer le bouton "No" lorsqu'on passe la souris dessus
+// Déplacer le bouton "No" lorsqu'on passe la souris dessus (et pas lors du clic)
 noButton.addEventListener("mouseover", function() {
     const maxX = window.innerWidth - noButton.offsetWidth;
     const maxY = window.innerHeight - noButton.offsetHeight;
