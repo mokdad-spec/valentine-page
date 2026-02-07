@@ -19,7 +19,7 @@ function createFirework(x, y) {
 }
 
 // Fonction pour générer des millions de cœurs
-function createHearts(x, y) {
+function createHearts() {
     const numHearts = 1000; // Un grand nombre de cœurs
     for (let i = 0; i < numHearts; i++) {
         const heart = document.createElement('span');
@@ -45,7 +45,7 @@ yesButton.addEventListener("click", function(event) {
     const x = event.clientX;
     const y = event.clientY;
     createFirework(x, y);
-    createHearts(x, y);
+    createHearts(); // Générer les cœurs sur toute la page
     showMessage(); // Afficher le message
 });
 
@@ -53,11 +53,13 @@ yesButton.addEventListener("click", function(event) {
 noButton.addEventListener("mouseover", function() {
     const maxX = window.innerWidth - noButton.offsetWidth;
     const maxY = window.innerHeight - noButton.offsetHeight;
+    
+    // Calculer une position aléatoire pour le bouton "No"
     const randomX = Math.floor(Math.random() * maxX);
     const randomY = Math.floor(Math.random() * maxY);
-
-    noButton.style.position = "absolute";
+    
+    // Déplacer le bouton "No" vers une position aléatoire sur la page
+    noButton.style.position = "absolute"; // S'assurer qu'il est en position absolue
     noButton.style.left = randomX + "px";
     noButton.style.top = randomY + "px";
 });
-
