@@ -13,6 +13,7 @@ body {
     overflow: hidden;
 }
 
+/* Container principal pour l'écriture et les boutons */
 .container {
     position: relative;
     padding: 30px 50px;
@@ -21,9 +22,10 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     width: 90%;
     max-width: 500px;
-    z-index: 10; /* Assurer que le contenu (texte, boutons) est au-dessus des cœurs */
+    z-index: 10; /* Assurer que le contenu (texte, boutons) est au-dessus des coeurs */
 }
 
+/* Titre du texte */
 h1 {
     font-size: 2.5em;
     margin-top: 50px;
@@ -31,6 +33,7 @@ h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+/* Message caché avant le clic */
 #message {
     font-size: 2em;
     margin-top: 20px;
@@ -43,7 +46,7 @@ h1 {
 /* Style des boutons */
 .buttons {
     position: absolute;
-    bottom: 140px; /* Déplacé encore plus bas */
+    bottom: 80px; /* Déplacer les boutons plus bas (80px depuis le bas du texte) */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -80,34 +83,9 @@ button:active {
     transform: scale(0.95);
 }
 
-/* Animation des coeurs */
+/* Supprimer le code des coeurs */
 #hearts {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-    z-index: 5; /* Les cœurs doivent être derrière les autres éléments */
-}
-
-.heart {
-    position: absolute;
-    color: red;
-    font-size: 2em;
-    animation: float 2s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0) scale(1);
-    }
-    50% {
-        transform: translateY(-50px) scale(1.2);
-    }
-    100% {
-        transform: translateY(0) scale(1);
-    }
+    display: none; /* Ne plus afficher les coeurs */
 }
 
 /* Animation des feux d'artifice */
