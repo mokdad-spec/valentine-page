@@ -45,6 +45,7 @@ function moveNoButton() {
     const maxX = window.innerWidth - noButton.offsetWidth;
     const maxY = window.innerHeight - noButton.offsetHeight;
 
+    // Déplacer le bouton "No" plusieurs fois sur l'écran (10 fois)
     for (let i = 0; i < 10; i++) {
         setTimeout(() => {
             const randomX = Math.floor(Math.random() * maxX);
