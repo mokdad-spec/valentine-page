@@ -3,6 +3,7 @@ const yesButton = document.getElementById("yes-btn");
 const noButton = document.getElementById("no-btn");
 const fireworksContainer = document.getElementById("fireworks");
 const heartsContainer = document.getElementById("hearts");
+const messageContainer = document.getElementById("message");
 
 // Fonction pour faire exploser les feux d'artifice
 function createFirework(x, y) {
@@ -32,12 +33,18 @@ function createHearts(x, y) {
     }
 }
 
+// Afficher le message avec un coeur
+function showMessage() {
+    messageContainer.innerHTML = "nheebeek bebitou ❤️"; // Affiche le message et le coeur
+}
+
 // Événement sur le bouton "Yes"
 yesButton.addEventListener("click", function(event) {
     const x = event.clientX;
     const y = event.clientY;
     createFirework(x, y);
     createHearts(x, y);
+    showMessage(); // Afficher le message
 });
 
 // Déplacer le bouton "No" lorsqu'on passe la souris dessus
