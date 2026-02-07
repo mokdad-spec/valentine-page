@@ -41,7 +41,7 @@ h1 {
 /* Style des boutons */
 .buttons {
     position: absolute;
-    bottom: 10px; /* Plus bas que précédemment */
+    bottom: 60px; /* Décalé de 3 cm (environ 30px) par rapport au bas */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
