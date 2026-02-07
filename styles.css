@@ -10,10 +10,9 @@ body {
     height: 100vh;
     color: white;
     text-align: center;
-    overflow: hidden;
+    overflow: hidden; /* Empêche le scroll */
 }
 
-/* Container principal pour l'écriture et les boutons */
 .container {
     position: relative;
     padding: 30px 50px;
@@ -25,7 +24,6 @@ body {
     z-index: 10; /* Assurer que le contenu (texte, boutons) est au-dessus des coeurs */
 }
 
-/* Titre du texte */
 h1 {
     font-size: 2.5em;
     margin-top: 50px;
@@ -33,7 +31,6 @@ h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Message caché avant le clic */
 #message {
     font-size: 2em;
     margin-top: 20px;
@@ -46,7 +43,7 @@ h1 {
 /* Style des boutons */
 .buttons {
     position: absolute;
-    bottom: 80px; /* Déplacer les boutons plus bas (80px depuis le bas du texte) */
+    bottom: 10px; /* Placer les boutons aussi bas que possible */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
