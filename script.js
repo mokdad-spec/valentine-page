@@ -18,24 +18,26 @@ function createFirework(x, y) {
     }
 }
 
-// Fonction pour générer des coeurs
+// Fonction pour générer des millions de cœurs
 function createHearts(x, y) {
-    const numHearts = 10; // Nombre de coeurs
+    const numHearts = 1000; // Un grand nombre de cœurs
     for (let i = 0; i < numHearts; i++) {
         const heart = document.createElement('span');
         heart.classList.add('heart');
         heart.innerHTML = "❤️"; // Le caractère du coeur
-        heart.style.left = `${x + Math.random() * 100 - 50}px`;
-        heart.style.top = `${y + Math.random() * 100 - 50}px`;
-        heart.style.animationDuration = `${Math.random() * 2 + 1}s`;
+        heart.style.left = `${Math.random() * window.innerWidth}px`; // Position aléatoire sur l'axe X
+        heart.style.top = `${Math.random() * window.innerHeight}px`; // Position aléatoire sur l'axe Y
+        heart.style.animationDuration = `${Math.random() * 2 + 1}s`; // Animation aléatoire
         heartsContainer.appendChild(heart);
-        setTimeout(() => heart.remove(), 2000); // Supprimer après l'animation
     }
 }
 
-// Afficher le message avec un coeur
+// Afficher le message après l'animation
 function showMessage() {
-    messageContainer.innerHTML = "nheebeek bebitou ❤️"; // Affiche le message et le coeur
+    setTimeout(() => {
+        messageContainer.innerHTML = "Nheeeeebeeeek bebitou ❤️"; // Affiche le message et le coeur
+        messageContainer.style.display = "block"; // Rendre le message visible
+    }, 2000); // Attendre la fin de l'animation
 }
 
 // Événement sur le bouton "Yes"
@@ -58,3 +60,4 @@ noButton.addEventListener("mouseover", function() {
     noButton.style.left = randomX + "px";
     noButton.style.top = randomY + "px";
 });
+
