@@ -38,12 +38,13 @@ h1 {
     color: #ff66b2;
     display: none; /* Caché par défaut */
     z-index: 20;
+    position: relative;
 }
 
 /* Style des boutons */
 .buttons {
     position: absolute;
-    bottom: 10px; /* Placer les boutons aussi bas que possible */
+    bottom: 30px; /* Placer les boutons un peu plus bas pour laisser de l'espace */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
