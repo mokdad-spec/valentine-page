@@ -43,12 +43,12 @@ h1 {
 /* Style des boutons */
 .buttons {
     position: absolute;
-    bottom: 40px; /* Décalé un peu plus bas pour éviter de recouvrir l'écriture */
+    bottom: 60px; /* Décalé de 60px, équivalent à environ 2 cm */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 20px;
-    z-index: 30; /* Les boutons au-dessus des cœurs */
+    z-index: 30; /* Les boutons au-dessus du texte et des autres éléments */
 }
 
 button {
@@ -80,61 +80,13 @@ button:active {
     transform: scale(0.95);
 }
 
-/* Animation des coeurs */
+/* Supprimer le code des coeurs */
 #hearts {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-    z-index: 5; /* Assurer que les cœurs sont derrière le texte et les boutons */
-}
-
-.heart {
-    position: absolute;
-    color: red;
-    font-size: 2em;
-    animation: float 2s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0) scale(1);
-    }
-    50% {
-        transform: translateY(-50px) scale(1.2);
-    }
-    100% {
-        transform: translateY(0) scale(1);
-    }
+    display: none; /* Ne plus afficher les coeurs */
 }
 
 /* Animation des feux d'artifice */
 #fireworks {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
-
-.firework {
-    position: absolute;
-    background-color: yellow;
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
-    animation: explode 1s ease-out forwards;
-}
-
-@keyframes explode {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(10);
-        opacity: 0;
-    }
-}
+    lef
