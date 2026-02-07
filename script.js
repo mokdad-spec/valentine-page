@@ -1,21 +1,53 @@
-// Sélection des éléments
+// Sélectionner les éléments
 const yesButton = document.getElementById("yes-btn");
 const noButton = document.getElementById("no-btn");
+const fireworksContainer = document.getElementById("fireworks");
+const heartsContainer = document.getElementById("hearts");
 
-// Fonction qui déplace le bouton "No" lorsque l'utilisateur clique dessus
+// Fonction pour faire exploser les feux d'artifice
+function createFirework(x, y) {
+    for (let i = 0; i < 20; i++) {
+        const firework = document.createElement('div');
+        firework.classList.add('firework');
+        firework.style.left = `${x}px`;
+        firework.style.top = `${y}px`;
+        firework.style.animationDelay = `${Math.random() * 0.5}s`;
+        fireworksContainer.appendChild(firework);
+        setTimeout(() => firework.remove(), 1000);
+    }
+}
+
+// Fonction pour générer des coeurs
+function createHearts(x, y) {
+    const numHearts = 10; // Nombre de coeurs
+    for (let i = 0; i < numHearts; i++) {
+        const heart = document.createElement('span');
+        heart.classList.add('heart');
+        heart.innerHTML = "❤️"; // Le caractère du coeur
+        heart.style.left = `${x + Math.random() * 100 - 50}px`;
+        heart.style.top = `${y + Math.random() * 100 - 50}px`;
+        heart.style.animationDuration = `${Math.random() * 2 + 1}s`;
+        heartsContainer.appendChild(heart);
+        setTimeout(() => heart.remove(), 2000); // Supprimer après l'animation
+    }
+}
+
+// Événement sur le bouton "Yes"
+yesButton.addEventListener("click", function(event) {
+    const x = event.clientX;
+    const y = event.clientY;
+    createFirework(x, y);
+    createHearts(x, y);
+});
+
+// Déplacer le bouton "No" lorsqu'on passe la souris dessus
 noButton.addEventListener("mouseover", function() {
-    const maxX = window.innerWidth - noButton.offsetWidth; // Largeur maximale
-    const maxY = window.innerHeight - noButton.offsetHeight; // Hauteur maximale
-    const randomX = Math.floor(Math.random() * maxX); // Position X aléatoire
-    const randomY = Math.floor(Math.random() * maxY); // Position Y aléatoire
+    const maxX = window.innerWidth - noButton.offsetWidth;
+    const maxY = window.innerHeight - noButton.offsetHeight;
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
 
-    noButton.style.position = "absolute"; // Positionner le bouton de manière absolue
-    noButton.style.left = randomX + "px"; // Déplacer sur l'axe X
-    noButton.style.top = randomY + "px"; // Déplacer sur l'axe Y
+    noButton.style.position = "absolute";
+    noButton.style.left = randomX + "px";
+    noButton.style.top = randomY + "px";
 });
-
-// Fonction qui affiche un message lorsque l'utilisateur clique sur "Yes"
-yesButton.addEventListener("click", function() {
-    alert("Yay! 💖 Thank you, Salma!");
-});
-
