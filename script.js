@@ -64,6 +64,9 @@ yesButton.addEventListener("click", function(event) {
     createFirework(x, y);
     createHearts(); // Générer les cœurs autour de la page
     showMessage(); // Afficher le message
+    
+    // Cacher le bouton Yes après le clic
+    yesButton.classList.add("hidden"); // Ajouter la classe "hidden" pour cacher le bouton "Yes"
 });
 
 // Déplacer le bouton "No" lorsqu'on passe la souris dessus
